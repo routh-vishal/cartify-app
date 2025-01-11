@@ -1,0 +1,114 @@
+.tagline-section {
+  background-size: cover;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  color: #0056b3;
+  text-align: center;
+}
+
+.tagline-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.tagline-content p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background-color: #da9c00;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e2554b;
+}
+
+
+.hot-deals {
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hot-deals h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #e74c3c; 
+}
+
+.hot-deals-list {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hot-deals-list .item-card {
+  width: 220px; 
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .tagline-section {
+    height: auto; /* Adjust height for better readability */
+    padding: 20px; /* Add some padding for smaller screens */
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center;
+    align-items: center;
+  }
+
+  .tagline-content h1 {
+    font-size: 2.5rem; /* Smaller font size for mobile */
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+
+  .tagline-content p {
+    font-size: 1rem; /* Adjust font size for better readability */
+    margin-bottom: 15px;
+  }
+
+  .cta-button {
+    font-size: 1.3rem; /* Reduce button size */
+    padding: 8px 16px; /* Adjust padding */
+  }
+
+  .hot-deals {
+    margin-top: 20px;
+    margin-bottom: 20px; /* Reduce bottom margin */
+  }
+
+  .hot-deals h2 {
+    font-size: 1.5rem; /* Adjust font size */
+    margin-bottom: 15px;
+  }
+
+  .hot-deals-list {
+    gap: 12px; /* Reduce gap between cards */
+    justify-content: center; /* Ensure items stay centered */
+  }
+
+  .hot-deals-list .item-card {
+    width: 150px; /* Reduce card width for smaller screens */
+    height: 300px;
+    margin: 8px; /* Adjust margins */
+  }
+  .item-description{
+    display: none;
+  }
+  .add-to-cart{
+    margin-top: 10px;
+  }
+}

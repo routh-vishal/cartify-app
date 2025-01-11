@@ -1,0 +1,17 @@
+import React from 'react';
+import Profile from './Profile';
+function Nav() {
+    return (
+        <nav className='navigation'>
+            <ul>
+                <li><a href="/myCart">My Cart</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/admin"><Profile /></a></li>
+            </ul>
+        </nav>
+    );
+}
+
+export default Nav;

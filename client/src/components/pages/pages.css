@@ -1,0 +1,182 @@
+body{
+  margin:0;
+  background-color: #fffeb4;
+}
+
+.main{
+  min-height: 80vh;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.about-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.about-page h1 {
+  color: #333;
+  margin: 0px;
+  padding-bottom: 0px;
+  font-size: 3rem;
+}
+
+.about-page p {
+  color: #555;
+  font-size: 1.5rem;
+  margin: 0px;
+  padding: 10px;
+  text-align: justify;
+  line-height: 35px;
+}
+
+
+
+.contact-page {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.contact-page h1 {
+  color: #333;
+}
+
+.contact-page ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-page li {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+
+
+.logo-contact img {
+  width: 300px;
+  height: 300px;
+  padding: 0px 0px 0px 20px;
+
+}
+
+.logo-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-contact h1 {
+  margin: 0px;
+  color: #12b1e6;
+  font-family: 'McLaren';
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(1px);
+  font-size: 3.5rem;
+}
+
+
+.item-detail-container {
+  max-width: 1200px;
+  margin: 40px;
+  padding: 20px;
+}
+
+.item-detail {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.item-detail-image img {
+  width: 600px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item-detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.item-detail-info h2 {
+  font-size: 2.5rem;
+  margin: 10px 0px;
+  color: #333;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #28a745;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+.not-found {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.not-found h1 {
+  font-size: 5rem;
+  color: #333;
+}
+
+.not-found p {
+  font-size: 1.5rem;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .item-detail{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .item-detail-image img{
+    width: 200px;
+  }
+  .item-detail-info{
+    gap: 0px;
+  }
+  .about-page p{
+    font-size: 1.3rem;
+    text-align: justify;
+  }
+  .logo-contact{
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-page h1{
+    margin-top: 0px;
+  }
+}

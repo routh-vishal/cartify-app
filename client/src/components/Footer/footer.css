@@ -1,0 +1,50 @@
+footer {
+  background-color: #eeb218;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  color: white;
+  text-align: center;
+  position: relative;
+  background-image: url("../../assets/nav_bg.png");
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: top;
+  width: auto;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  backdrop-filter: blur(2px) brightness(99%);
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-buttons img {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.3s;
+}
+
+.social-buttons img:hover {
+  transform: scale(1.1);
+}
+
+.footer-content span{
+  transform: scale(1.2);
+  color: #ffffff;
+}
