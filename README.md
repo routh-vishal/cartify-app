@@ -117,7 +117,9 @@ cd cartify-app
      ```bash
      psql -U your_username -d cartify_db -f schema.sql
      ```
-
+3. Set up the environment variables:
+   - Rename `.env.example` to `.env`.
+   - Fill in your database and other environment variables.
 ---
 ## Scripts
 1. **Start the server**:
