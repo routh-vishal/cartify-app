@@ -69,7 +69,7 @@ function SignupPage() {
         />
         <div className="pass-container">
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             name="password"
             placeholder="Password"
             value={formData.password}
