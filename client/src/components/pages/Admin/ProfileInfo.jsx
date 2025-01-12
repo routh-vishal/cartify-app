@@ -36,7 +36,6 @@ const ProfileInfo = () => {
       />
       <h2 className="profile-name">{userInfo.username}</h2>
       <p className="profile-email">Email: {userInfo.email}</p>
-      {/* <button className="edit-profile-btn">Edit Profile</button> */}
     </div>
   );
 };

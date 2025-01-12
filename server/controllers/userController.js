@@ -1,6 +1,4 @@
 import pool from '../config/db.js'
-// Get user profile
-
 export const getProfile = async (req, res) => {
   try {
     const userId = req.headers.userid;

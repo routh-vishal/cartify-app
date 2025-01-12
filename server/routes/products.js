@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/search', async (req, res) => {
-    const { q } = req.query; // Extract the search term from the query string
+    const { q } = req.query; 
     try {
         const result = await pool.query(
             'SELECT * FROM products WHERE LOWER(name) LIKE $1 OR LOWER(description) LIKE $1',

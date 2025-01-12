@@ -38,15 +38,15 @@ function App() {
         });
 
         if (response.data.tokenValid) {
-          setIsAuthenticated(true); // Token is valid
+          setIsAuthenticated(true);
         }
       } catch (error) {
         console.error("Token verification failed:", error);
-        window.sessionStorage.removeItem("authToken"); // Remove the invalid token
-        window.sessionStorage.removeItem("id"); // Remove the id
+        window.sessionStorage.removeItem("authToken"); 
+        window.sessionStorage.removeItem("id"); 
         setIsAuthenticated(false);
         if (window.location.pathname !== "/signup") 
-        navigate("/login"); // Redirect to login
+        navigate("/login"); 
       }
     };
 
@@ -63,7 +63,7 @@ function App() {
         <Route path="/login" element={isAuthenticated?<Navigate to="/home" replace />:<Login />} />
         <Route path="/" element={<Navigate to="/login" replace />} />
         
-        {/* Use PrivateRoute for protected routes */}
+        {/* PrivateRoute for protected routes */}
         <Route path="/home" element={<PrivateRoute element={<Home />} />} />
         <Route path="/about" element={<PrivateRoute element={<About />} />} />
         <Route path="/contact" element={<PrivateRoute element={<Contact />} />} />

@@ -39,19 +39,16 @@ function LoginPage() {
       return;
     }
     try {
-      // Make a POST request to the login API   
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, formData);
       sessionStorage.setItem("id", response.data.id);
       if (response.data.success) {
-        // Save the token in localStorage
         window.sessionStorage.setItem("authToken", response.data.token);
         alert("Login successful!");
-
-        // Redirect to the home page
+        
         navigate("/home");
       }
     } catch (err) {
-      // Display error message
+      
       setError(err.response?.data?.message || "Something went wrong!");
     }
   };
@@ -85,9 +82,9 @@ function LoginPage() {
           />
           <span
             className="show-pass"
-            onMouseDown={togglePasswordVisibility} // Show password on hold
-            onMouseUp={togglePasswordVisibility}   // Hide password when mouse is released
-            onMouseLeave={() => { setShowPassword(false); }} // Hide password if mouse leaves the button
+            onMouseDown={togglePasswordVisibility} 
+            onMouseUp={togglePasswordVisibility}   
+            onMouseLeave={() => { setShowPassword(false); }} 
             onTouchStart={togglePasswordVisibility}
             onTouchEnd={togglePasswordVisibility}
           >

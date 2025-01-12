@@ -7,7 +7,6 @@ import Hamburger from './HamBurger';
 function Header() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  // Update the state on window resize
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);

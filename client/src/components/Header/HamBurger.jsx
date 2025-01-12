@@ -11,12 +11,9 @@ function Hamburger() {
 
   return (
     <div className="hamburger-container">
-      {/* Hamburger icon */}
       <div className={`hamburger-icon`} onClick={toggleMenu}>
         {isOpen?<IoMdClose size={40}/>:<RxHamburgerMenu size={40}/>}
       </div>
-
-      {/* Mobile Navigation Menu */}
       <nav className={`mobile-nav ${isOpen ? "show" : ""}`}>
         <ul>
           <li><a href="/myCart" onClick={() => setIsOpen(false)}>My Cart</a></li>

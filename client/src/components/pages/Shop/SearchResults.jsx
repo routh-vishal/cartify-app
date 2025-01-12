@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import ItemCard from "./Itemcard";
-import "./shop.css"; // Reuse Shop styling for layout consistency
+import "./shop.css"; 
 
 function SearchResults() {
-  const location = useLocation(); // Hook to get the current URL
-  const queryParams = new URLSearchParams(location.search); // Parse query parameters
-  const searchText = queryParams.get("searchText"); // Extract the searchText parameter
+  const location = useLocation(); 
+  const queryParams = new URLSearchParams(location.search); 
+  const searchText = queryParams.get("searchText"); 
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -27,7 +27,7 @@ function SearchResults() {
     if (searchText) {
       fetchSearchResults();
     }
-  }, [searchText]); // Refetch whenever searchText changes
+  }, [searchText]); 
 
   if (loading) {
     return <div><h1 style={{fontSize:"3.5rem", margin:"10% 25%", color: "#333"}}>Loading search results...</h1></div>;

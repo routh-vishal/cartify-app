@@ -70,8 +70,8 @@
 
 @media (max-width: 768px) {
     .item-card {
-        width: 150px; /* Reduce card width for smaller screens */
+        width: 150px; 
         height: 300px;
-        margin: 8px; /* Adjust margins */
+        margin: 8px; 
       }
 }

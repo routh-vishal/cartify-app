@@ -4,8 +4,6 @@ export const getItemDetails = async (req, res) => {
     const { id } = req.params;
 
     try {
-        // Fetch the product from the database by its ID
-
         const result = await pool.query('SELECT * FROM products WHERE id = $1', [id]);
 
 

@@ -5,10 +5,10 @@ function LogOut() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    sessionStorage.removeItem("authToken"); // Clear the session token
-    sessionStorage.removeItem("id"); // Clear the session token
+    sessionStorage.removeItem("authToken"); 
+    sessionStorage.removeItem("id"); 
     alert("You have been logged out.");
-    navigate("/login"); // Redirect to login page
+    navigate("/login"); 
   };
 
   return (

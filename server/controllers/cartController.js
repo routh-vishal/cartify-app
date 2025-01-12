@@ -1,5 +1,4 @@
 import pool from '../config/db.js'
-// Get cart items
 export const getCart = async (req, res) => {
     try {
         const userId = req.headers.userid;

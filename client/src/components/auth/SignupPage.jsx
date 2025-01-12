@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./auth.css"; // Add your styling here
+import "./auth.css"; 
 import { useNavigate } from "react-router-dom";
 import validator from "validator";
 import { FaRegEye } from "react-icons/fa";
 function SignupPage() {
   const [formData, setFormData] = useState({
-    username: "",  // Change 'name' to 'username'
+    username: "",  
     email: "",
     password: "",
   });
@@ -39,7 +39,7 @@ function SignupPage() {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/signup`, formData);
       if (response.data.success) {
         alert("Signup successful!");
-        navigate("/login"); // Redirect to login page
+        navigate("/login");
       }
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong!");
@@ -53,9 +53,9 @@ function SignupPage() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="username"  // Change 'name' to 'username'
+          name="username"  
           placeholder="Username"
-          value={formData.username}  // Change 'name' to 'username'
+          value={formData.username}  
           onChange={handleChange}
           required
         />
@@ -78,9 +78,9 @@ function SignupPage() {
           />
           <span
             className="show-pass"
-            onMouseDown={togglePasswordVisibility} // Show password on hold
-            onMouseUp={togglePasswordVisibility}   // Hide password when mouse is released
-            onMouseLeave={() => { setShowPassword(false); }} // Hide password if mouse leaves the button
+            onMouseDown={togglePasswordVisibility} 
+            onMouseUp={togglePasswordVisibility}   
+            onMouseLeave={() => { setShowPassword(false); }} 
           >
             <FaRegEye />
           </span>

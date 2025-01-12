@@ -1,73 +1,71 @@
-/* Hamburger container */
 .hamburger-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: relative;
-    margin-right: 15px;
-  }
-  
-  /* Hamburger icon */
-  .hamburger-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  margin-right: 15px;
+}
 
-  /* Mobile Navigation Menu */
-  .mobile-nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 40px;
-    right: 0;
-    background-color: #eeb218;
-    background-image: url("../../assets/nav_bg.png");
-    background-size: cover; 
-    background-repeat: repeat; 
-    background-position:top;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    border: 0.5px solid rgb(65, 64, 64);
-    width: 150px;
-    padding: 10px;
-    z-index: 10;
-  }
-  
-  .mobile-nav.show {
-    display: block;
-  }
-  
-  .mobile-nav ul {
-    flex-direction: column;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .mobile-nav li {
-    margin: 10px 0;
-    text-align: center;
-  }
-  
-  .mobile-nav a {
-    display: block;
-    width: 100%;
-    text-decoration: none;
-    color: #000000;
-    font-size: 16px;
-  }
-  
-  .mobile-nav a:hover {
-    color: #6c63ff;
-  }
-  nav>ul li a{
-    text-shadow: none;
-    font-weight: 1700;
-  }
-  
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #eeb218;
+  background-image: url("../../assets/nav_bg.png");
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: top;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border: 0.5px solid rgb(65, 64, 64);
+  width: 150px;
+  padding: 10px;
+  z-index: 10;
+}
+
+.mobile-nav.show {
+  display: block;
+}
+
+.mobile-nav ul {
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav li {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.mobile-nav a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+}
+
+.mobile-nav a:hover {
+  color: #6c63ff;
+}
+
+nav>ul li a {
+  text-shadow: none;
+  font-weight: 1700;
+}

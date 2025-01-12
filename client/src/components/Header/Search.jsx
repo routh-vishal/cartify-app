@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function Search() {
   const [searchInput, setSearchInput] = useState("");
-  const navigate = useNavigate(); // Hook to handle navigation
+  const navigate = useNavigate(); 
 
   function handleSearch(event) {
     if (searchInput.trim()) {
