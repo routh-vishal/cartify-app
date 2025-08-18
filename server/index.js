@@ -7,7 +7,15 @@ import userRoutes from './routes/userRoutes.js'
 import verifyToken from './middleware/verification.js'
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://cartify-app-rouge.vercel.app", // your frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
+
+// Handle preflight OPTIONS requests
+app.options("*", cors());
 app.use(bodyParser.json());
 
 app.use("/api/products", productsRouter);
