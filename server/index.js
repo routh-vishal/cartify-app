@@ -8,13 +8,20 @@ import verifyToken from './middleware/verification.js'
 const app = express();
 
 app.use(cors({
-  origin: "https://cartify-app-rouge.vercel.app", // your frontend URL
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true); // allow curl/Postman
+    if (origin.endsWith(".vercel.app")) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  allowedHeaders: '*', // add custom headers here
   credentials: true
 }));
 
-// Handle preflight OPTIONS requests
+// Handle preflight requests
 app.options("*", cors());
 app.use(bodyParser.json());
 
