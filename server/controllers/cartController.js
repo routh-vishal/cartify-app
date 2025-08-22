@@ -1,7 +1,7 @@
 import pool from '../config/db.js'
 export const getCart = async (req, res) => {
     try {
-        const userId = req.headers.userid;
+        const userId = req.user.id;
         const query = `
         SELECT c.product_id, p.name, p.price, p.description, c.quantity, c.added_at
         FROM my_cart c
@@ -22,7 +22,8 @@ export const getCart = async (req, res) => {
 
 export const addToCart = async (req, res) => {
     try {
-        const { userId, productId, quantity } = req.body;
+        const userId = req.user.id;
+        const { productId, quantity } = req.body;
         const query = `
         INSERT INTO my_cart (user_id, product_id, quantity)
         VALUES ($1, $2, $3)
@@ -41,7 +42,8 @@ export const addToCart = async (req, res) => {
 
 export const removeFromCart = async (req, res) => {
     try {
-      const { userId, productId } = req.body;
+      const userId=req.user.id;
+      const {productId} = req.body;
       const query = `
         DELETE FROM my_cart WHERE user_id = $1 AND product_id = $2;
       `;

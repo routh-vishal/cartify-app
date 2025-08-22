@@ -8,11 +8,9 @@ const ProfileInfo = () => {
     const fetchProfile = async () => {
       try {
         const token = sessionStorage.getItem("authToken");
-        const userId=sessionStorage.getItem("id");
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/user/profile?userId=${userId}`, {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/user/profile`, {
           headers: {
             Authorization: `Bearer ${token}`,
-            Userid:userId,
           },
         });
         

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-const userId=sessionStorage.getItem("id");
 const AddressBook = () => {
   const [addresses, setAddresses] = useState([]);
 
@@ -11,7 +10,6 @@ const AddressBook = () => {
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/user/addresses`, {
           headers: {
             Authorization: `Bearer ${token}`,
-            Userid:userId,
           },
         });
         setAddresses(response.data);
@@ -35,7 +33,6 @@ const AddressBook = () => {
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            Userid:userId,
           },
         }
       );
@@ -51,7 +48,6 @@ const AddressBook = () => {
       await axios.delete(`${process.env.REACT_APP_API_URL}/user/address/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
-          Userid:userId,
         },
       });
       setAddresses((prev) => prev.filter((addr) => addr.id !== id));

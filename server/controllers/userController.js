@@ -1,7 +1,7 @@
 import pool from '../config/db.js'
 export const getProfile = async (req, res) => {
   try {
-    const userId = req.headers.userid;
+    const userId = req.user.id;
     const userQuery = `
       SELECT u.email, u.username, p.first_name, p.last_name, p.phone_number, p.address 
       FROM users u
@@ -22,7 +22,7 @@ export const getProfile = async (req, res) => {
 // Get addresses
 export const getAddresses = async (req, res) => {
   try {
-    const userId=req.headers.userid;
+    const userId=req.user.id;
     const { rows } = await pool.query("SELECT id, address FROM addresses WHERE user_id = $1", [userId]); // Example user ID
     res.json(rows);
   } catch (error) {
@@ -33,7 +33,7 @@ export const getAddresses = async (req, res) => {
 
 // Add a new address
 export const addAddress = async (req, res) => {
-  const userId=req.headers.userid;
+  const userId=req.user.id;
   try {
     const { address } = req.body;
     const { rows } = await pool.query(
@@ -51,7 +51,7 @@ export const addAddress = async (req, res) => {
 export const deleteAddress = async (req, res) => {
   try {
     const { id } = req.params;
-    const userId = req.headers.userid;
+    const userId = req.user.id;
     const result = await pool.query("DELETE FROM addresses WHERE id = $1 AND user_id = $2", [id, userId]); // Example user ID
     if (result.rowCount === 0) return res.status(404).json({ message: "Address not found" });
 

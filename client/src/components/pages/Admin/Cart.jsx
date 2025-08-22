@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-const userId=window.sessionStorage.getItem("id");
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
 
@@ -8,11 +7,9 @@ const Cart = () => {
     const fetchCart = async () => {
       try {
         const token = sessionStorage.getItem("authToken");
-        const userId=sessionStorage.getItem("id");
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/user/cart`, {
           headers: {
             Authorization: `Bearer ${token}`,
-            Userid:userId,
           },
         });
         setCartItems(response.data);
@@ -24,12 +21,14 @@ const Cart = () => {
     fetchCart();
   }, []);
 
-   const removeFromCart = async (userId, productId) => {
+   const removeFromCart = async (productId) => {
     try {
+      const token = sessionStorage.getItem("authToken");
       await axios.post(`${process.env.REACT_APP_API_URL}/user/remove-from-cart`, {
-        userId,
         productId,
-      });
+      }, 
+        { headers: { Authorization: `Bearer ${token}` } }
+    );
       setCartItems((prevItems) => prevItems.filter((item) => item.product_id !== productId));
     } catch (error) {
       console.error("Error removing product from cart:", error);
@@ -53,7 +52,7 @@ const Cart = () => {
               <p>Price: ${item.price}</p>
               <p>Quantity: {item.quantity}</p>
             </div>
-              <button className="remove-cart" onClick={(e)=>{e.preventDefault();removeFromCart(userId,item.product_id)}}>Remove from Cart</button>
+              <button className="remove-cart" onClick={(e)=>{e.preventDefault();removeFromCart(item.product_id)}}>Remove from Cart</button>
             </div>
             </a>
           </li>
