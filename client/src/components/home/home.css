@@ -19,13 +19,10 @@
 }
 
 .cta-button {
-  height: 75px;
-  width: 170px;
-  margin-top: 20px;
   background-color: #da9c00;
   color: white;
   padding: 10px 20px;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
