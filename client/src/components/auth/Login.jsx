@@ -60,6 +60,13 @@ function LoginPage() {
 
   return (
     <div className="auth-container">
+      <div className="bg-logo"></div>
+      <div className="title-container">
+        <h1 className="brand-title">Cartify</h1>
+        <p className="tagline">Your shopping, simplified</p>
+      </div>
+     
+
       <h2>Login</h2>
       {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>

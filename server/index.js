@@ -18,7 +18,7 @@ app.use(cors({
     }
   },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: '*', // add custom headers here
+  allowedHeaders: '*',
   credentials: true
 }));
 
