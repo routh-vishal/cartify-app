@@ -101,7 +101,7 @@
 .bg-logo {
   position: absolute;
   inset: 0;
-  background: url("C:\Users\Vishal\Desktop\webd\backup\cartify-app\client\src\assets\logo.svg") no-repeat center center;
+  background: url("../../assets/logo.svg") no-repeat center center;
   background-size: 65%;
   opacity: 0.8;
   filter: blur(1px);
